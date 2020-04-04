@@ -1,1 +1,575 @@
-Hello World
+<!doctype html>
+<html >
+  <head>
+    <title>Robert Herdzik iOS guy</title>
+    <meta name="description" content="">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      body {
+        font: normal 1em/1.5 Consolas, monaco, monospace;
+      }
+      
+      html, body, #app {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+      
+      html.is-code,
+      .is-code body {
+        background: black;
+      }
+      
+      header {
+        position: absolute;
+        top: 0;
+        height: 2em;
+        width: 100%;
+        background: blue;
+        color: white;
+        line-height: 2em;
+      }
+      
+      header a {
+        float: left;
+        color: inherit;
+        padding: 0 0.5em;
+      }
+      
+      header a:hover {
+        background: white;
+        color: blue;
+      }
+      
+      header .right {
+        float: right;
+      }
+      
+      nav {
+        position: absolute;
+        top: 2em;
+        bottom: 0;
+        left: 0;
+        width: 300px;
+        background: black;
+        overflow: auto;
+        padding: 2em 0;
+        border-right: 4px solid white;
+      }
+      
+      nav a {
+        display: block;
+        padding: 0.25em 2em;
+        color: white;
+        text-decoration: none;
+      }
+      
+      nav a.active {
+        background: white;
+        color: black;
+      }
+      
+      main {
+        position: absolute;
+        top: 2em;
+        bottom: 0;
+        left: 300px;
+        right: 0;
+        overflow: auto;
+        padding-bottom: 25%;
+      }
+      
+      .container {
+        margin: 0 auto;
+        max-width: 960px;
+        padding: 2em;
+      }
+      
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      hr {
+        border: none;
+        border-top: 4px solid black;
+      }
+      
+      pre, code {
+        font: inherit;
+        color: white;
+        background: black;
+      }
+      
+      code {
+        padding: 0 0.2em;
+      }
+      
+      pre {
+        padding: 1em;
+      }
+      
+      pre code {
+        padding: 0;
+      }
+      
+      table {
+        width: 100%;
+        border: 4px solid black;
+      }
+      
+      td, th {
+        padding: 0.5em;
+        text-align: left;
+      }
+      
+      .container > ul,
+      .container > ol {
+        padding: 0 1em;
+        padding-left: 3em;
+        border: 4px solid black;
+      }
+      
+      ul {
+        list-style: square;
+      }
+      
+      li {
+        margin: 1em 0;
+      }
+      
+      #code {
+        margin: 0;
+      }
+      
+      /**
+       * okaidia theme for JavaScript, CSS and HTML
+       * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+       * @author ocodia
+       */
+
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #f8f8f2;
+        background: none;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+        border-radius: 0.3em;
+      }
+
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #272822;
+      }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal;
+      }
+
+      .token.comment,
+      .token.prolog,
+      .token.doctype,
+      .token.cdata {
+        color: slategray;
+      }
+
+      .token.punctuation {
+        color: #f8f8f2;
+      }
+
+      .namespace {
+        opacity: .7;
+      }
+
+      .token.property,
+      .token.tag,
+      .token.constant,
+      .token.symbol,
+      .token.deleted {
+        color: #f92672;
+      }
+
+      .token.boolean,
+      .token.number {
+        color: #ae81ff;
+      }
+
+      .token.selector,
+      .token.attr-name,
+      .token.string,
+      .token.char,
+      .token.builtin,
+      .token.inserted {
+        color: #a6e22e;
+      }
+
+      .token.operator,
+      .token.entity,
+      .token.url,
+      .language-css .token.string,
+      .style .token.string,
+      .token.variable {
+        color: #f8f8f2;
+      }
+
+      .token.atrule,
+      .token.attr-value,
+      .token.function {
+        color: #e6db74;
+      }
+
+      .token.keyword {
+        color: #66d9ef;
+      }
+
+      .token.regex,
+      .token.important {
+        color: #fd971f;
+      }
+
+      .token.important,
+      .token.bold {
+        font-weight: bold;
+      }
+      .token.italic {
+        font-style: italic;
+      }
+
+      .token.entity {
+        cursor: help;
+      }
+    </style>
+  </head>
+  <body>    
+    <div id="app">
+      <header>        
+        <a class="right" href="https://twitter.com/roherdzik">
+          Follow me on Twitter
+        </a>
+        
+      </header>
+      
+      <nav>
+        
+          <a href="/" >
+            README.md
+          </a>
+        
+          <a href="/intro // _TODO [🌶]:" class="active">
+            0-introduction.md
+          </a>
+        
+          <a href="/tokenizer // _TODO [🌶]:" >
+            1-tokenizer.js
+          </a>
+        
+      </nav>
+
+      <main>
+        
+          <div class="container">
+            <h1>Introduction</h1>
+<p>Today we're going to write a compiler together. But not just any compiler... A
+super duper teeny tiny compiler! A compiler that is so small that if you remove
+all the comments this file would only be ~200 lines of actual code.</p>
+<p>We're going to compile some lisp-like function calls into some C-like function
+calls.</p>
+<p>If you are not familiar with one or the other. I'll just give you a quick intro.</p>
+<p>If we had two functions <code>add</code> and <code>subtract</code> they would be written like this:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>LISP-style</th>
+<th>C-style</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>2 + 2</code></td>
+<td><code>(add 2 2)</code></td>
+<td><code>add(2, 2)</code></td>
+</tr>
+<tr>
+<td><code>4 - 2</code></td>
+<td><code>(subtract 4 2)</code></td>
+<td><code>subtract(4, 2)</code></td>
+</tr>
+<tr>
+<td><code>2 + (4 - 2)</code></td>
+<td><code>(add 2 (subtract 4 2))</code></td>
+<td><code>add(2, subtract(4, 2))</code></td>
+</tr>
+</tbody>
+</table>
+<p>Easy peezy right?</p>
+<p>Well good, because this is exactly what we are going to compile. While this is
+neither a complete LISP or C syntax, it will be enough of the syntax to
+demonstrate many of the major pieces of a modern compiler.</p>
+<h1>Stages of a Compiler</h1>
+<p>Most compilers break down into three primary stages: Parsing, Transformation,
+and Code Generation</p>
+<ol>
+<li><em>Parsing</em> is taking raw code and turning it into a more abstract
+representation of the code.</li>
+<li><em>Transformation</em> takes this abstract representation and manipulates to do
+whatever the compiler wants it to.</li>
+<li><em>Code Generation</em> takes the transformed representation of the code and turns
+it into new code.</li>
+</ol>
+<h2>Parsing</h2>
+<p>Parsing typically gets broken down into two phases: Lexical Analysis and
+Syntactic Analysis.</p>
+<p><em>Lexical Analysis</em> takes the raw code and splits it apart into these things
+called tokens by a thing called a tokenizer (or lexer).</p>
+<p>Tokens are an array of tiny little objects that describe an isolated piece of
+the syntax. They could be numbers, labels, punctuation, operators, whatever.</p>
+<p><em>Syntactic Analysis</em> takes the tokens and reformats them into a representation
+that describes each part of the syntax and their relation to one another. This
+is known as an <strong>Intermediate Representation</strong> or <strong>Abstract Syntax Tree</strong>.</p>
+<p>An Abstract Syntax Tree, or AST for short, is a deeply nested object that
+represents code in a way that is both easy to work with and tells us a lot of
+information.</p>
+<p>For the following syntax:</p>
+<pre><code class="language-lisp">(add 2 (subtract 4 2))
+</code></pre>
+<p>Tokens might look something like this:</p>
+<pre><code class="language-js">[
+  { type: 'paren',  value: '('        },
+  { type: 'name',   value: 'add'      },
+  { type: 'number', value: '2'        },
+  { type: 'paren',  value: '('        },
+  { type: 'name',   value: 'subtract' },
+  { type: 'number', value: '4'        },
+  { type: 'number', value: '2'        },
+  { type: 'paren',  value: ')'        },
+  { type: 'paren',  value: ')'        },
+]
+</code></pre>
+<p>And an Abstract Syntax Tree (AST) might look like this:</p>
+<pre><code class="language-js">{
+  type: 'Program',
+  body: [{
+    type: 'CallExpression',
+    name: 'add',
+    params: [{
+      type: 'NumberLiteral',
+      value: '2',
+    }, {
+      type: 'CallExpression',
+      name: 'subtract',
+      params: [{
+        type: 'NumberLiteral',
+        value: '4',
+      }, {
+        type: 'NumberLiteral',
+        value: '2',
+      }]
+    }]
+  }]
+}
+</code></pre>
+<h2>Transformation</h2>
+<p>The next type of stage for a compiler is transformation. Again, this just takes
+the AST from the last step and makes changes to it. It can manipulate the AST
+in the same language or it can translate it into an entirely new language.</p>
+<p>Let's look at how we would transform an AST.</p>
+<p>You might notice that our AST has elements within it that look very similar.
+There are these objects with a type property. Each of these are known as an AST
+Node. These nodes have defined properties on them that describe one isolated
+part of the tree.</p>
+<p>We can have a node for a &quot;NumberLiteral&quot;:</p>
+<pre><code class="language-js">{
+  type: 'NumberLiteral',
+  value: '2',
+}
+</code></pre>
+<p>Or maybe a node for a &quot;CallExpression&quot;:</p>
+<pre><code class="language-js">{
+  type: 'CallExpression',
+  name: 'subtract',
+  params: [
+    // nested nodes go here...
+  ],
+}
+</code></pre>
+<p>When transforming the AST we can manipulate nodes by adding/removing/replacing
+properties, we can add new nodes, remove nodes, or we could leave the existing
+AST alone and create an entirely new one based on it.</p>
+<p>Since we're targeting a new language, we're going to focus on creating an
+entirely new AST that is specific to the target language.</p>
+<h2>Traversal</h2>
+<p>In order to navigate through all of these nodes, we need to be able to traverse
+through them. This traversal process goes to each node in the AST depth-first.</p>
+<pre><code class="language-js">{
+  type: 'Program',
+  body: [{
+    type: 'CallExpression',
+    name: 'add',
+    params: [{
+      type: 'NumberLiteral',
+      value: '2'
+    }, {
+      type: 'CallExpression',
+      name: 'subtract',
+      params: [{
+        type: 'NumberLiteral',
+        value: '4'
+      }, {
+        type: 'NumberLiteral',
+        value: '2'
+      }]
+    }]
+  }]
+}
+</code></pre>
+<p>So for the above AST we would go:</p>
+<ol>
+<li>Program - Starting at the top level of the AST</li>
+<li>CallExpression (add) - Moving to the first element of the Program's body</li>
+<li>NumberLiteral (2) - Moving to the first element of CallExpression's params</li>
+<li>CallExpression (subtract) - Moving to the second element of CallExpression's params</li>
+<li>NumberLiteral (4) - Moving to the first element of CallExpression's params</li>
+<li>NumberLiteral (2) - Moving to the second element of CallExpression's params</li>
+</ol>
+<p>If we were manipulating this AST directly, instead of creating a separate AST,
+we would likely introduce all sorts of abstractions here. But just visiting
+each node in the tree is enough.</p>
+<p>The reason I use the word &quot;visiting&quot; is because there is this pattern of how
+to represent operations on elements of an object structure.</p>
+<h3>Visitors</h3>
+<p>The basic idea here is that we are going to create a &quot;visitor&quot; object that has
+methods that will accept different node types.</p>
+<pre><code class="language-js">var visitor = {
+  NumberLiteral() {},
+  CallExpression() {},
+};
+</code></pre>
+<p>When we traverse our AST, we will call the methods on this visitor whenever we
+&quot;enter&quot; a node of a matching type.</p>
+<p>In order to make this useful we will also pass the node and a reference to the
+parent node.</p>
+<pre><code class="language-js">var visitor = {
+  NumberLiteral(node, parent) {},
+  CallExpression(node, parent) {},
+};
+</code></pre>
+<p>However, there also exists the possibilty of calling things on &quot;exit&quot;. Imagine
+our tree structure from before in list form:</p>
+<ul>
+<li>Program
+<ul>
+<li>CallExpression
+<ul>
+<li>NumberLiteral</li>
+<li>CallExpression
+<ul>
+<li>NumberLiteral</li>
+<li>NumberLiteral</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>As we traverse down, we're going to reach branches with dead ends. As we finish
+each branch of the tree we &quot;exit&quot; it. So going down the tree we &quot;enter&quot; each
+node, and going back up we &quot;exit&quot;.</p>
+<ul>
+<li>→ Program (enter)
+<ul>
+<li>→ CallExpression (enter)
+<ul>
+<li>→ NumberLiteral (enter)</li>
+<li>← NumberLiteral (exit)</li>
+<li>→ CallExpression (enter)
+<ul>
+<li>→ NumberLiteral (enter)</li>
+<li>← NumberLiteral (exit)</li>
+<li>→ NumberLiteral (enter)</li>
+<li>← NumberLiteral (exit)</li>
+</ul>
+</li>
+<li>← CallExpression (exit)</li>
+</ul>
+</li>
+<li>← CallExpression (exit)</li>
+</ul>
+</li>
+<li>← Program (exit)</li>
+</ul>
+<p>In order to support that, the final form of our visitor will look like this:</p>
+<pre><code class="language-js">var visitor = {
+  NumberLiteral: {
+    enter(node, parent) {},
+    exit(node, parent) {},
+  }
+};
+</code></pre>
+<h2>Code Generation</h2>
+<p>The final phase of a compiler is code generation. Sometimes compilers will do
+things that overlap with transformation, but for the most part code generation
+just means take our AST and string-ify code back out.</p>
+<p>Code generators work several different ways, some compilers will reuse the
+tokens from earlier, others will have created a separate representation of the
+code so that they can print node linearly, but from what I can tell most will
+use the same AST we just created, which is what we're going to focus on.</p>
+<p>Effectively our code generator will know how to &quot;print&quot; all of the different
+node types of the AST, and it will recursively call itself to print nested
+nodes until everything is printed into one long string of code.</p>
+<hr>
+<p>And that's it! That's all the different pieces of a compiler.</p>
+<p>Now that isn't to say every compiler looks exactly like I described here.
+Compilers serve many different purposes, and they might need more steps than I
+have detailed.</p>
+<p>But now you should have a general high-level idea of what most compilers look
+like.</p>
+<p>Now that I've explained all of this, you're all good to go write your own
+compilers right?</p>
+<p>Just kidding, that's what I'm here to help with :P</p>
+<p>So let's begin...</p>
+
+          </div>
+        
+        
+        
+      </main>
+    </div>
+  </body>
+</html>
+
