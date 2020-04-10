@@ -37,14 +37,18 @@
       h1, h2, h3, h4, h5, h6 {
       font-family: 'monaco' !important;
       }
-      a, p {
+      a, p, small {
       font-family: 'monaco' !important;
       }
       .container_background {
-      background-color: #F9FFFC
+      background-color: #F9FFFC;
       }
       .navbar_bacground {
-      background-color: #57605C
+      background-color: #57605C;
+      }
+      .footer_background {
+      background-color: #F9FFFC;
+      text-decoration-color: #CCD1CF;
       }
       </style>
    </head>
@@ -67,12 +71,12 @@
       <div class="container-sm text-center body">
          <h2>About Me <i class="fab fa-apple"></i></h2>
          <p>
-            Hi, my name is Robert, I'm an iOS Engineer based in Barcelona Spain 🇪🇸.
+            Hi, my name is Robert, I'm an iOS Engineer based in Barcelona Spain 🇪🇸
          </p>
          <p>
             What I <i class="fas fa-heart"></i> : <kbd>coding</kbd>, <kbd>cycling</kbd>, <kbd>drawing</kbd> and <kbd>photography</kbd>
          </p>
-            <br>
+         <br>
          <div class="container">
             <img src="./Assets/me.png" class="rounded" alt="Cinque Terre" width="250">
             <br>
@@ -81,5 +85,10 @@
             <a class = "btn btn-sm btn-outline-dark" href = "mailto:roherdzik2@gmail.com">Contact <i class="fas fa-comment-alt"></i></a>
          </div>
       </div>
+      <footer id="sticky-footer" class="py-4 footer_background text-gray-50">
+         <div class="container text-center">
+            <small>Copyright &copy; Robert Herdzik</small>
+         </div>
+      </footer>
    </body>
 </html>
