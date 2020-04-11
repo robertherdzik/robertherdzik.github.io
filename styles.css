@@ -1,0 +1,39 @@
+body {
+      padding-top: 90px;
+      }
+      .btn-light_gray {
+      color: #F9FFFC;
+      background-color: #CCD1CF;
+      }
+      .btn-gray {
+      color: #F9FFFC;
+      background-color: #202A25;
+      }
+      .btn-dark-green {
+      color: #CCD1CF;
+      background-color: #202A25;
+      }
+      .btn-active {
+      color: #202A25;
+      background-color: #CCD1CF;
+      }
+      .navbar-green {
+      color: #F9FFFC;
+      background-color: #202A25;
+      }
+      h1, h2, h3, h4, h5, h6 {
+      font-family: 'monaco' !important;
+      }
+      a, p, small {
+      font-family: 'monaco' !important;
+      }
+      .container_background {
+      background-color: #F9FFFC;
+      }
+      .navbar_bacground {
+      background-color: #57605C;
+      }
+      .footer_background {
+      background-color: #F9FFFC;
+      text-decoration-color: #CCD1CF;
+      }
