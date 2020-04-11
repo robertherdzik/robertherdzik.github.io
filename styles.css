@@ -15,7 +15,11 @@ body {
       }
       .btn-active {
       color: #202A25;
-      background-color: #CCD1CF;
+      background-color: #F9FFFC;
+      }
+      .btn-inactive {
+      color: #57605C;
+      background-color: #202A25;
       }
       .navbar-green {
       color: #F9FFFC;
