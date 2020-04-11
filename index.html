@@ -6,51 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="styles.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
       <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-      <style>
-      body {
-      padding-top: 90px;
-      }
-      .btn-light_gray {
-      color: #F9FFFC;
-      background-color: #CCD1CF;
-      }
-      .btn-gray {
-      color: #F9FFFC;
-      background-color: #202A25;
-      }
-      .btn-dark-green {
-      color: #CCD1CF;
-      background-color: #202A25;
-      }
-      .btn-active {
-      color: #202A25;
-      background-color: #CCD1CF;
-      }
-      .navbar-green {
-      color: #F9FFFC;
-      background-color: #202A25;
-      }
-      h1, h2, h3, h4, h5, h6 {
-      font-family: 'monaco' !important;
-      }
-      a, p, small {
-      font-family: 'monaco' !important;
-      }
-      .container_background {
-      background-color: #F9FFFC;
-      }
-      .navbar_bacground {
-      background-color: #57605C;
-      }
-      .footer_background {
-      background-color: #F9FFFC;
-      text-decoration-color: #CCD1CF;
-      }
-      </style>
    </head>
    <!-- Global site tag (gtag.js) - Google Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163377950-1"></script>
@@ -62,13 +22,10 @@
    </script>
    <body class = "container_background">
       <nav class="navbar navbar_bacground fixed-top">
-         <div class="nav nav-pills">
-            <li class="nav-item">
-               <a class="btn btn-active active btn-sm" data-toggle="pill" href="/">about_me</a>
-            </li>
-            <!-- <li class="nav-item">
-               <a class="btn btn-active active btn-sm" data-toggle="pill" href=""./blog.md">blog</a>
-            </li> -->
+         <div class="btn-group btn-group-sm">
+            <button class="btn btn-active btn-sm" data-toggle="pill" href="/">about_me</button>
+            <!-- <button class="btn btn-inactive btn-sm" data-toggle="pill" href="./blog.md">blog</button> -->
+            <button class="btn btn-inactive btn-sm" data-toggle="pill" href="./photos.html">photos</button>
          </div>
          <nav class="navbar navbar-expand-sm navbar_bacground justify-content-end btn-group">
             <a class="btn btn-dark-green btn-sm" href="https://twitter.com/roherdzik"><i class="fab fa-twitter-square"></i></a>
@@ -93,9 +50,9 @@
             <a class = "btn btn-sm btn-outline-dark" href = "mailto:roherdzik2@gmail.com">Contact <i class="fas fa-comment-alt"></i></a>
          </div>
       </div>
+      <br>
+      <br>
       <!-- // _TODO [🌶]: use sticky footer to the bottom of the side-->
-      <br>
-      <br>
       <!--<br>
       <footer id="sticky-footer" class="py-4 footer_background text-gray-50">
          <div class="container text-center">
