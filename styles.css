@@ -8,8 +8,8 @@ body {
     background: #fff;
     color: #000;
     font-family: monaco;
-    letter-spacing: 0.2px;
-    line-height: 1.7em;
+    letter-spacing: 0.1px;
+    line-height: 1.6em;
     text-align: center;
 }
 
@@ -75,7 +75,6 @@ body {
 
 header {
     background-color: #eee;
-    position: fixed;
     width: 100%;
 }
 
@@ -125,10 +124,12 @@ a {
 
 .item-list > li {
     display: block;
-    padding: 10px 5px 5px 10px;
+    padding: 10px 5px 0px 10px;
     border-radius: 3px;
     background-color: #57605c;
     margin-bottom: 20px;
+    letter-spacing: 0.2px;
+    line-height: 1.2em;
 }
 
 .item-list > li:last-child {
@@ -148,7 +149,7 @@ a {
 
 p.item-date {
     margin-top: 10px;
-    font-size: 0.6em;
+    font-size: 0.5em;
 }
 
 .tag-list {
@@ -157,12 +158,14 @@ p.item-date {
 
 .tag-list li,
 .tag {
-    display: inline-flex;
+    display: inline-grid;
     background-color: #57605c;
     color: #ddd;
-    padding: 1px 3px;
+    padding: 1px 3px 1px 3px;
     border-radius: 3px;
     margin-right: 3px;
+    letter-spacing: 1.6px;
+    line-height: 1.2em;
 }
 
 .tag-list a,
@@ -211,7 +214,6 @@ code {
     width: 100%;
     max-height: 450px;
     object-fit: scale-down;
-    margin-bottom: -30px;
 }
 
 @media (prefers-color-scheme: dark) {
