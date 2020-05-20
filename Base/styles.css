@@ -8,6 +8,8 @@ body {
     background: #fff;
     color: #000;
     font-family: monaco;
+    letter-spacing: 0.2px;
+    line-height: 1.7;
     text-align: center;
 }
 
@@ -15,8 +17,9 @@ body {
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
-    padding: 40px;
+    padding: 80px 40px 40px 40px;
     text-align: left;
+/*     position: relative; */
 }
 
 .inline {
@@ -36,7 +39,6 @@ body {
     margin-right: 10px;
     border-radius: 3px;
     padding: 1px;
-    
 }
 
 .social-buttons-align-right a {
@@ -59,6 +61,7 @@ body {
     background-color: #57605C;
     margin: 1px;
     font-size: 0.8em;
+
 }
 
 .nav-buttn-social {
@@ -72,6 +75,8 @@ body {
 
 header {
     background-color: #eee;
+    position: fixed;
+    width: 100%;
 }
 
 header nav {
@@ -204,8 +209,9 @@ code {
 
 .item-img {
     width: 100%;
-    max-height: 400px;
+    max-height: 450px;
     object-fit: scale-down;
+    margin-bottom: -50px;
 }
 
 @media (prefers-color-scheme: dark) {
