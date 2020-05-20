@@ -9,7 +9,7 @@ body {
     color: #000;
     font-family: monaco;
     letter-spacing: 0.2px;
-    line-height: 1.7;
+    line-height: 1.7em;
     text-align: center;
 }
 
@@ -211,7 +211,7 @@ code {
     width: 100%;
     max-height: 450px;
     object-fit: scale-down;
-    margin-bottom: -50px;
+    margin-bottom: -30px;
 }
 
 @media (prefers-color-scheme: dark) {
