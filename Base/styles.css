@@ -19,7 +19,6 @@ body {
     margin-right: auto;
     padding: 30px 40px 40px 40px;
     text-align: left;
-/*     position: relative; */
 }
 
 .inline {
@@ -179,6 +178,7 @@ p.item-date {
 }
 
 .content {
+    margin-top: 20px;
     margin-bottom: 40px;
     font-size: 0.8em;
 }
@@ -211,8 +211,10 @@ code {
 }
 
 .item-img {
+/*    workaround for `wrapper:padding:top value` */
+    margin-top: -25px;
     width: 100%;
-    max-height: 300px;
+    max-height: 250px;
     object-fit: cover;
     object-position: 50% 70%;
 }
