@@ -263,13 +263,13 @@ code {
 pre {
     margin-bottom: 1em;
     background-color: #202A25;
-    padding: 16px 0;
+    padding: 0px;
     border-radius: 8px;
 }
 pre code {
     font-family: monaco;
     display: block;
-    padding: 0px;
+    padding: 10px;
     color:  #F9FFFC,
     line-height: 1.4em;
     font-size: 0.9em;
