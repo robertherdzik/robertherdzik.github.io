@@ -220,6 +220,14 @@ code {
     border-radius: 5px;
 }
 
+.item-img-me {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    border-radius: 5px;
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #F9FFFC;
