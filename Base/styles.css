@@ -210,6 +210,24 @@ code {
    padding: 3px;
 }
 
+img[alt=article-img-big] {
+    width: 85%;
+    height:auto;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img[alt=article-img-small] {
+    width: 50%;
+    height:auto;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .item-img {
 /*    workaround for `wrapper:padding:top value` */
     margin-top: -25px;
